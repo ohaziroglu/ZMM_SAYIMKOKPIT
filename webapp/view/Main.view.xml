@@ -1,0 +1,81 @@
+<mvc:View
+    controllerName="com.isuzu.zmmsayimkokpit.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page">
+					<content> <Table id="idMalzemeTable"
+							mode="SingleSelectMaster" items="{ path: '/MalzemeListesiSet', filters: [{ path: 'Statu', operator: 'EQ', value1: '02' }] }">
+		
+		<headerToolbar >
+			<OverflowToolbar >
+				<Title text="GÜNLÜK MALZEME SAYIM FORMU" level="H2"/>
+				<ToolbarSpacer/>
+					<Button text="Yenile" icon= "sap-icon://refresh" press= "onRefreshButtonPressed"/>
+					<Button id="detay" text="Detaya Gir" type="Transparent" press="onPress" />
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column width="9em">
+				<Text text="Malzeme No" />
+			</Column>
+			<Column width="auto">
+				<Text text="Sayım" />
+			</Column>
+			<Column width="auto">
+				<Text text="Kullanım Miktarı" />
+			</Column>
+			<Column width="auto">
+				<Text text="Son Takılı Şase" />
+			</Column>
+			<Column width="auto">
+				<Text text="Hat Basıncı" />
+			</Column>
+			<Column width="auto">
+				<Text text="Sayım Farkı" />
+			</Column>
+			<Column width="auto">
+				<Text text="Fark Tutarı" />
+			</Column>
+			<Column width="auto">
+				<Text text="Araç Modeli" />
+			</Column>
+			<Column width="auto">
+				<Text text="Malzeme Adresi" />
+			</Column>
+			<Column width="auto">
+				<Text text="Notlar" />
+			</Column>
+
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle"  >
+			
+				<cells>
+				<ObjectIdentifier
+						title="{MalzemeNumarasi}"
+						text="{MalzemeTanimi}"/>
+				<Text text="{SayimMiktar}" />	
+				<Text text="{a}" />	
+				<Text text="{a}" />	
+				<Text text="{a}" />	
+				<Text text="{a}" />	
+				<Text text="{a}" />	
+				<Text text="{a}" />	
+				<Text text="{DepoYeri}" />	
+				<Text text="{a}" />	
+						
+					
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table> </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

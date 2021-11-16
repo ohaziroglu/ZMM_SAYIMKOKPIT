@@ -1,0 +1,51 @@
+<mvc:View controllerName="com.isuzu.zmmsayimkokpit.controller.Detail" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	displayBlock="true" height="100%" busyIndicatorDelay="0">
+	<App id="app">
+		<pages>
+			<Page>
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="DetailTable" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+							adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+							singleContainerFullSize="false">
+							<f:content>
+								<Label text="Malzeme No"/>
+								<Text id="mal_no" text="{mainModel>/Item/MalzemeNumarasi}"/>
+								<Label text="Malzeme Tanımı"/>
+								<Text id="mal_tan" text="{mainModel>/Item/MalzemeTanimi}"/>
+								<Label text="Sayım"/>
+								<Input id="a" value="{mainModel>/Item/SayimMiktar}"/>
+								<!-->
+								<Input
+									value="{ path:'detail>/Item/OlculenKalinlik', type: 'sap.ui.model.type.Float', formatOptions:{ maxIntegerDigits: 10, maxFractionDigits: 3, groupingSeparator: '.', decimalSeparator: ',', decimals:3 } }"
+									-->
+									<Label text="Kullanım Miktarı"/>
+									<Input id="s" value="{}"/>
+									<Label text="Son Takılı Şase"/>
+									<Input id="d" value="{}"/>
+									<Label text="Hat Basıncı"/>
+									<Input id="f" value="{}"/>
+									<Label text="Sayım Farkı"/>
+									<Text id="say_far" text="{}"/>
+									<Label text="Fark Tutarı"/>
+									<Text id="fark_t" text="{} "/>
+									<Label text="Araç Modeli"/>
+									<Text id="arac_mo" text="{}"/>
+									<Label text="Malzeme Adresi"/>
+									<Text id="mal_adr" text="{ }"/>
+									<Label text="Notlar"/>
+									<Input id="notlar" value="{}"/>
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+					</content>
+					<footer>
+						<OverflowToolbar>
+							<ToolbarSpacer/>
+							<Button type="Accept" text="Kaydet" press="onSaveButtonPressed"/>
+						</OverflowToolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</mvc:View>
