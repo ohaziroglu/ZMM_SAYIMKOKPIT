@@ -8,15 +8,26 @@
 		<App id="app">
 			<pages>
 				<Page id="page">
-					<content> <Table id="idMalzemeTable"
+				<headerContent>
+					<OverflowToolbar id="otb6">
+						<ToolbarSpacer/>
+						<Button text="Yenile" icon= "sap-icon://refresh" press= "onRefreshButtonPressed"/>
+						<ToolbarSeparator>
+							<layoutData>
+								<OverflowToolbarLayoutData group="2"/>
+							</layoutData>
+						</ToolbarSeparator>
+						<Button id="detay" text="Detay" type="Transparent" press="onPress" />
+					</OverflowToolbar>
+				</headerContent>
+					<content> 
+					<Table id="idMalzemeTable"
 							mode="SingleSelectMaster" items="{ path: '/MalzemeListesiSet', filters: [{ path: 'Statu', operator: 'EQ', value1: '02' }] }">
 		
 		<headerToolbar >
 			<OverflowToolbar >
 				<Title text="GÜNLÜK MALZEME SAYIM FORMU" level="H2"/>
 				<ToolbarSpacer/>
-					<Button text="Yenile" icon= "sap-icon://refresh" press= "onRefreshButtonPressed"/>
-					<Button id="detay" text="Detaya Gir" type="Transparent" press="onPress" />
 			</OverflowToolbar>
 		</headerToolbar>
 		<columns>
